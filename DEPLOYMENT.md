@@ -74,10 +74,14 @@ CREATE POLICY "Allow count reads" ON waitlist FOR SELECT USING (true);
 
 ### 1.3 Get Your Supabase Credentials
 
-1. Go to **Settings** → **API** (left sidebar)
-2. Copy these values (you'll need them in Step 3):
-   - **Project URL** (looks like: `https://xxxxx.supabase.co`)
-   - **anon public** key (under "Project API keys")
+1. **Get Project URL**: Go to **Settings** → **API** (left sidebar)
+   - Copy the **Project URL** (looks like: `https://xxxxx.supabase.co`)
+   
+2. **Get API Key**: Go to **Settings** → **API Keys** (left sidebar)
+   - Copy the **Publishable key** (starts with `sb_publishable_...`)
+   - This is the key you'll use for `PUBLIC_SUPABASE_ANON_KEY`
+   
+   **Note**: If you see the new API keys format with `sb_publishable_` prefix, use that. Otherwise, use the "anon public" key from the API page.
 
 ---
 
@@ -134,8 +138,8 @@ git push -u origin main
 
 | Name | Value |
 |------|-------|
-| `PUBLIC_SUPABASE_URL` | Your Supabase Project URL (from Step 1.3) |
-| `PUBLIC_SUPABASE_ANON_KEY` | Your Supabase anon public key (from Step 1.3) |
+| `PUBLIC_SUPABASE_URL` | Your Supabase Project URL (e.g., `https://xxxxx.supabase.co`) |
+| `PUBLIC_SUPABASE_ANON_KEY` | Your Supabase Publishable key (starts with `sb_publishable_...` or the anon public key) |
 
 3. Click **"Add"** for each variable
 4. (Optional) Add `PUBLIC_PLAUSIBLE_DOMAIN` if using Plausible analytics
