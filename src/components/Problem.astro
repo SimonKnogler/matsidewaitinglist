@@ -1,0 +1,163 @@
+---
+// Problem section with forgetting curve visualization
+---
+
+<section class="section relative overflow-hidden" id="problem">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <span class="text-purple-400 font-medium text-sm uppercase tracking-wider">The Problem</span>
+      <h2 class="text-3xl md:text-5xl font-bold mt-4 mb-6" style="font-family: 'Space Grotesk', sans-serif;">
+        Your Brain Is Working Against You
+      </h2>
+      <p class="text-zinc-400 text-lg max-w-2xl mx-auto">
+        You drill a technique 50 times on Tuesday. By next week, you've forgotten 60% of it. This isn't your fault — it's how memory works.
+      </p>
+    </div>
+    
+    <!-- Forgetting Curve Visualization -->
+    <div class="max-w-4xl mx-auto mb-16">
+      <div class="glass-card p-8">
+        <h3 class="text-xl font-semibold mb-6 text-center">The Forgetting Curve</h3>
+        
+        <!-- SVG Chart -->
+        <div class="relative h-64 md:h-80">
+          <svg viewBox="0 0 400 200" class="w-full h-full" preserveAspectRatio="xMidYMid meet">
+            <!-- Grid Lines -->
+            <defs>
+              <linearGradient id="curveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#8b5cf6" />
+                <stop offset="100%" stop-color="#ef4444" />
+              </linearGradient>
+            </defs>
+            
+            <!-- Horizontal Grid Lines -->
+            <line x1="50" y1="30" x2="380" y2="30" stroke="#27272a" stroke-width="1" />
+            <line x1="50" y1="70" x2="380" y2="70" stroke="#27272a" stroke-width="1" />
+            <line x1="50" y1="110" x2="380" y2="110" stroke="#27272a" stroke-width="1" />
+            <line x1="50" y1="150" x2="380" y2="150" stroke="#27272a" stroke-width="1" />
+            
+            <!-- Y-axis Labels -->
+            <text x="40" y="35" fill="#71717a" font-size="10" text-anchor="end">100%</text>
+            <text x="40" y="75" fill="#71717a" font-size="10" text-anchor="end">75%</text>
+            <text x="40" y="115" fill="#71717a" font-size="10" text-anchor="end">50%</text>
+            <text x="40" y="155" fill="#71717a" font-size="10" text-anchor="end">25%</text>
+            
+            <!-- X-axis Labels -->
+            <text x="50" y="180" fill="#71717a" font-size="10" text-anchor="middle">Day 0</text>
+            <text x="132" y="180" fill="#71717a" font-size="10" text-anchor="middle">Day 1</text>
+            <text x="214" y="180" fill="#71717a" font-size="10" text-anchor="middle">Day 3</text>
+            <text x="297" y="180" fill="#71717a" font-size="10" text-anchor="middle">Day 7</text>
+            <text x="380" y="180" fill="#71717a" font-size="10" text-anchor="middle">Day 30</text>
+            
+            <!-- Forgetting Curve Path -->
+            <path 
+              id="forgetting-curve"
+              d="M 50 30 Q 100 80, 132 95 Q 170 115, 214 125 Q 260 140, 297 145 Q 340 150, 380 155" 
+              fill="none" 
+              stroke="url(#curveGradient)" 
+              stroke-width="3"
+              stroke-linecap="round"
+              class="curve-path"
+            />
+            
+            <!-- Data Points -->
+            <circle cx="50" cy="30" r="5" fill="#8b5cf6" class="data-point" />
+            <circle cx="132" cy="95" r="5" fill="#a855f7" class="data-point" />
+            <circle cx="214" cy="125" r="5" fill="#d946ef" class="data-point" />
+            <circle cx="297" cy="145" r="5" fill="#f43f5e" class="data-point" />
+            <circle cx="380" cy="155" r="5" fill="#ef4444" class="data-point" />
+            
+            <!-- Percentage Labels -->
+            <text x="50" y="20" fill="#8b5cf6" font-size="11" font-weight="600" text-anchor="middle">100%</text>
+            <text x="132" y="85" fill="#a855f7" font-size="11" font-weight="600" text-anchor="middle">58%</text>
+            <text x="214" y="115" fill="#d946ef" font-size="11" font-weight="600" text-anchor="middle">44%</text>
+            <text x="297" y="135" fill="#f43f5e" font-size="11" font-weight="600" text-anchor="middle">36%</text>
+            <text x="380" y="145" fill="#ef4444" font-size="11" font-weight="600" text-anchor="middle">21%</text>
+          </svg>
+        </div>
+        
+        <p class="text-center text-zinc-500 mt-4 text-sm">
+          Based on Ebbinghaus's research on memory decay (1885)
+        </p>
+      </div>
+    </div>
+    
+    <!-- Pain Points Grid -->
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="glass-card p-6 text-center">
+        <div class="w-14 h-14 rounded-2xl bg-red-500/10 flex items-center justify-center mx-auto mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M16 16s-1.5-2-4-2-4 2-4 2"/>
+            <line x1="9" y1="9" x2="9.01" y2="9"/>
+            <line x1="15" y1="9" x2="15.01" y2="9"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Watch, Drill, Forget</h3>
+        <p class="text-zinc-400 text-sm">
+          You've watched the same instructional 5 times. Two weeks later? Can't remember the setup.
+        </p>
+      </div>
+      
+      <div class="glass-card p-6 text-center">
+        <div class="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center mx-auto mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-orange-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">No Structure</h3>
+        <p class="text-zinc-400 text-sm">
+          10,000+ technique videos exist. None of them know what YOU should practice next.
+        </p>
+      </div>
+      
+      <div class="glass-card p-6 text-center">
+        <div class="w-14 h-14 rounded-2xl bg-yellow-500/10 flex items-center justify-center mx-auto mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-yellow-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 20V10"/>
+            <path d="M12 20V4"/>
+            <path d="M6 20v-6"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Invisible Progress</h3>
+        <p class="text-zinc-400 text-sm">
+          You train for months but can't tell if you're actually improving or just showing up.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .curve-path {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: draw-curve 2s ease-out forwards;
+  }
+  
+  .data-point {
+    opacity: 0;
+    animation: fade-in 0.3s ease-out forwards;
+  }
+  
+  .data-point:nth-child(1) { animation-delay: 0.4s; }
+  .data-point:nth-child(2) { animation-delay: 0.8s; }
+  .data-point:nth-child(3) { animation-delay: 1.2s; }
+  .data-point:nth-child(4) { animation-delay: 1.6s; }
+  .data-point:nth-child(5) { animation-delay: 2s; }
+  
+  @keyframes draw-curve {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+</style>

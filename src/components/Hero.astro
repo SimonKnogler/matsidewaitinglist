@@ -1,0 +1,202 @@
+---
+// Hero section with animated background and waitlist form
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Animated Background -->
+  <div class="absolute inset-0 z-0">
+    <!-- Gradient Orbs -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-violet-500/15 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-900/10 rounded-full blur-3xl"></div>
+    
+    <!-- Grid Pattern -->
+    <div class="absolute inset-0 grid-bg opacity-50"></div>
+    
+    <!-- Radial Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0b]/50 to-[#0a0a0b]"></div>
+  </div>
+  
+  <!-- Content -->
+  <div class="container relative z-10 text-center px-6 py-20">
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-8 animate-fade-in-up opacity-0">
+      <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+      <span class="text-sm text-purple-300 font-medium">Now accepting early access signups</span>
+    </div>
+    
+    <!-- Headline -->
+    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-fade-in-up opacity-0 animate-delay-100" style="font-family: 'Space Grotesk', sans-serif;">
+      Stop Forgetting What You<br/>
+      <span class="bg-gradient-to-r from-purple-400 via-violet-400 to-purple-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">Learn on the Mat</span>
+    </h1>
+    
+    <!-- Subheadline -->
+    <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 animate-fade-in-up opacity-0 animate-delay-200">
+      The first AI-powered training app that tells you <strong class="text-white">exactly what to practice</strong> based on science-backed spaced repetition — adapted for physical skills.
+    </p>
+    
+    <!-- Waitlist Form -->
+    <form id="waitlist-form" class="max-w-xl mx-auto animate-fade-in-up opacity-0 animate-delay-300">
+      <div class="glass-card p-2 flex flex-col sm:flex-row gap-3">
+        <input 
+          type="email" 
+          name="email"
+          placeholder="Enter your email" 
+          required
+          class="flex-1 input-dark bg-transparent border-0 focus:ring-0 focus:shadow-none"
+        />
+        <button type="submit" class="btn-primary whitespace-nowrap flex items-center justify-center gap-2">
+          <span>Join Waitlist</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Additional Fields (shown after email) -->
+      <div id="additional-fields" class="hidden mt-4 space-y-3">
+        <select name="martial_art" required class="w-full select-dark">
+          <option value="">Select your martial art</option>
+          <option value="bjj">Brazilian Jiu-Jitsu</option>
+          <option value="wrestling">Wrestling</option>
+          <option value="mma">MMA</option>
+          <option value="judo">Judo</option>
+          <option value="muay_thai">Muay Thai / Kickboxing</option>
+          <option value="boxing">Boxing</option>
+          <option value="other">Other</option>
+        </select>
+        
+        <select name="experience_level" required class="w-full select-dark">
+          <option value="">Select your experience level</option>
+          <option value="beginner">Beginner (0-2 years)</option>
+          <option value="intermediate">Intermediate (2-5 years)</option>
+          <option value="advanced">Advanced (5+ years)</option>
+          <option value="coach">Coach / Instructor</option>
+        </select>
+        
+        <button type="submit" class="w-full btn-primary">
+          Complete Signup
+        </button>
+      </div>
+      
+      <!-- Success Message -->
+      <div id="success-message" class="hidden mt-4 p-4 rounded-xl bg-green-500/10 border border-green-500/20">
+        <div class="flex items-center gap-3 text-green-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <span class="font-medium">You're on the list! Check your email for confirmation.</span>
+        </div>
+      </div>
+      
+      <!-- Error Message -->
+      <div id="error-message" class="hidden mt-4 p-4 rounded-xl bg-red-500/10 border border-red-500/20">
+        <div class="flex items-center gap-3 text-red-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="15" y1="9" x2="9" y2="15"/>
+            <line x1="9" y1="9" x2="15" y2="15"/>
+          </svg>
+          <span class="font-medium" id="error-text">Something went wrong. Please try again.</span>
+        </div>
+      </div>
+    </form>
+    
+    <!-- Social Proof -->
+    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-zinc-500 animate-fade-in-up opacity-0 animate-delay-400">
+      <div class="flex items-center gap-2">
+        <div class="flex -space-x-2">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 border-2 border-[#0a0a0b]"></div>
+          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-cyan-600 border-2 border-[#0a0a0b]"></div>
+          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 border-2 border-[#0a0a0b]"></div>
+          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-orange-400 to-red-600 border-2 border-[#0a0a0b]"></div>
+        </div>
+        <span>Join <strong class="text-white" id="waitlist-count">847</strong> martial artists</span>
+      </div>
+      <span class="hidden sm:inline text-zinc-700">•</span>
+      <span>Based on research used by <strong class="text-white">10M+ learners</strong></span>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-zinc-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 5v14M19 12l-7 7-7-7"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('waitlist-form') as HTMLFormElement;
+  const additionalFields = document.getElementById('additional-fields');
+  const successMessage = document.getElementById('success-message');
+  const errorMessage = document.getElementById('error-message');
+  const errorText = document.getElementById('error-text');
+  const emailInput = form.querySelector('input[name="email"]') as HTMLInputElement;
+  const initialButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+  
+  let step = 1;
+  
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    if (step === 1) {
+      // Validate email
+      if (!emailInput.value || !emailInput.validity.valid) {
+        emailInput.focus();
+        return;
+      }
+      
+      // Show additional fields
+      additionalFields?.classList.remove('hidden');
+      initialButton.classList.add('hidden');
+      step = 2;
+      return;
+    }
+    
+    // Step 2: Submit full form
+    const formData = new FormData(form);
+    const data = {
+      email: formData.get('email'),
+      martial_art: formData.get('martial_art'),
+      experience_level: formData.get('experience_level'),
+      utm_source: new URLSearchParams(window.location.search).get('utm_source') || '',
+      utm_medium: new URLSearchParams(window.location.search).get('utm_medium') || '',
+      utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || '',
+    };
+    
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      
+      const result = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to join waitlist');
+      }
+      
+      // Success
+      form.classList.add('hidden');
+      successMessage?.classList.remove('hidden');
+      
+      // Store in localStorage to remember signup
+      localStorage.setItem('waitlist_signup', JSON.stringify({ email: data.email, id: result.id }));
+      
+      // Redirect to survey after delay
+      setTimeout(() => {
+        window.location.href = `/survey?id=${result.id}`;
+      }, 2000);
+      
+    } catch (err: any) {
+      errorMessage?.classList.remove('hidden');
+      if (errorText) {
+        errorText.textContent = err.message || 'Something went wrong. Please try again.';
+      }
+    }
+  });
+</script>

@@ -1,0 +1,201 @@
+---
+// Solution section with app preview and features
+---
+
+<section class="section relative overflow-hidden" id="solution">
+  <!-- Background Glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-600/5 rounded-full blur-3xl pointer-events-none"></div>
+  
+  <div class="container relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <span class="text-purple-400 font-medium text-sm uppercase tracking-wider">The Solution</span>
+      <h2 class="text-3xl md:text-5xl font-bold mt-4 mb-6" style="font-family: 'Space Grotesk', sans-serif;">
+        Train Smarter, Not Harder
+      </h2>
+      <p class="text-zinc-400 text-lg max-w-2xl mx-auto">
+        We adapted the same algorithm used by millions of language learners — and made it work for physical skills.
+      </p>
+    </div>
+    
+    <!-- How It Works -->
+    <div class="grid md:grid-cols-3 gap-8 mb-20">
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/20 to-violet-500/20 border border-purple-500/20 flex items-center justify-center mx-auto mb-6">
+          <span class="text-2xl font-bold text-purple-400">1</span>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Log Your Practice</h3>
+        <p class="text-zinc-400">
+          After each session, rate how well you executed each technique. Takes 30 seconds.
+        </p>
+      </div>
+      
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/20 to-violet-500/20 border border-purple-500/20 flex items-center justify-center mx-auto mb-6">
+          <span class="text-2xl font-bold text-purple-400">2</span>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Algorithm Calculates</h3>
+        <p class="text-zinc-400">
+          Motor-FSRS predicts exactly when you'll start forgetting — and schedules your next review.
+        </p>
+      </div>
+      
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/20 to-violet-500/20 border border-purple-500/20 flex items-center justify-center mx-auto mb-6">
+          <span class="text-2xl font-bold text-purple-400">3</span>
+        </div>
+        <h3 class="text-xl font-semibold mb-3">Practice at Peak</h3>
+        <p class="text-zinc-400">
+          Review techniques right before you forget them. Maximum retention, minimum wasted effort.
+        </p>
+      </div>
+    </div>
+    
+    <!-- App Preview Mockup -->
+    <div class="relative max-w-5xl mx-auto mb-20">
+      <div class="glass-card p-4 md:p-8 glow-subtle">
+        <!-- Mock App Interface -->
+        <div class="bg-[#0f0f11] rounded-xl overflow-hidden border border-zinc-800">
+          <!-- App Header -->
+          <div class="flex items-center justify-between px-6 py-4 border-b border-zinc-800">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                  <path d="M2 17l10 5 10-5"/>
+                  <path d="M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <span class="font-semibold">Today's Practice</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm text-zinc-400">
+              <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+              <span>3 techniques due</span>
+            </div>
+          </div>
+          
+          <!-- Technique Cards -->
+          <div class="p-6 space-y-4">
+            <!-- Due Now -->
+            <div class="flex items-center justify-between p-4 rounded-xl bg-purple-500/10 border border-purple-500/20">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-purple-500/20 flex items-center justify-center">
+                  <span class="text-xl">🔄</span>
+                </div>
+                <div>
+                  <h4 class="font-medium">Scissor Sweep</h4>
+                  <p class="text-sm text-zinc-400">Guard → Mount</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <span class="text-sm font-medium text-purple-400">Due now</span>
+                <div class="text-xs text-zinc-500">Last: 3 days ago</div>
+              </div>
+            </div>
+            
+            <!-- Due Soon -->
+            <div class="flex items-center justify-between p-4 rounded-xl bg-zinc-800/50 border border-zinc-700/50">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-zinc-700/50 flex items-center justify-center">
+                  <span class="text-xl">🔒</span>
+                </div>
+                <div>
+                  <h4 class="font-medium">Kimura from Guard</h4>
+                  <p class="text-sm text-zinc-400">Guard → Submission</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <span class="text-sm font-medium text-zinc-400">Tomorrow</span>
+                <div class="text-xs text-zinc-500">Stability: 87%</div>
+              </div>
+            </div>
+            
+            <!-- Rating Display -->
+            <div class="flex items-center justify-between p-4 rounded-xl bg-zinc-800/50 border border-zinc-700/50">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-violet-500/20 to-purple-500/20 flex items-center justify-center">
+                  <span class="text-xl">📊</span>
+                </div>
+                <div>
+                  <h4 class="font-medium">Your Guard Rating</h4>
+                  <p class="text-sm text-zinc-400">+47 points this week</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <span class="text-2xl font-bold text-purple-400">1,623</span>
+                <div class="text-xs text-purple-300">🟣 Expert</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Floating Stats -->
+      <div class="absolute -right-4 top-1/4 glass-card p-4 hidden lg:block animate-float">
+        <div class="text-sm text-zinc-400 mb-1">Retention Rate</div>
+        <div class="text-2xl font-bold text-green-400">94%</div>
+      </div>
+      
+      <div class="absolute -left-4 bottom-1/4 glass-card p-4 hidden lg:block animate-float" style="animation-delay: -2s;">
+        <div class="text-sm text-zinc-400 mb-1">Techniques Tracked</div>
+        <div class="text-2xl font-bold text-purple-400">47</div>
+      </div>
+    </div>
+    
+    <!-- Key Differentiator -->
+    <div class="glass-card p-8 md:p-12 max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+        </svg>
+        <span class="text-sm text-purple-300 font-medium">Motor-FSRS Algorithm</span>
+      </div>
+      
+      <h3 class="text-2xl md:text-3xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif;">
+        Built for Physical Skills, Not Flashcards
+      </h3>
+      
+      <p class="text-zinc-400 text-lg mb-8 max-w-2xl mx-auto">
+        Standard spaced repetition was designed for vocabulary. We adapted it for motor learning — accounting for sleep consolidation, variable practice, and live training transfer.
+      </p>
+      
+      <div class="grid sm:grid-cols-3 gap-6 text-left">
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-medium mb-1">24h Minimum Intervals</h4>
+            <p class="text-sm text-zinc-500">Motor skills consolidate during sleep</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-medium mb-1">Interleaving Bonus</h4>
+            <p class="text-sm text-zinc-500">Mixed practice boosts retention 15%</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-medium mb-1">Transfer Tracking</h4>
+            <p class="text-sm text-zinc-500">Rewards techniques that work in sparring</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

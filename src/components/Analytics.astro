@@ -1,0 +1,69 @@
+---
+// Analytics component - supports Plausible
+const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN;
+---
+
+{plausibleDomain && (
+  <script
+    defer
+    data-domain={plausibleDomain}
+    src="https://plausible.io/js/script.js"
+  />
+)}
+
+<!-- Custom event tracking -->
+<script is:inline>
+  // Track scroll depth
+  let maxScroll = 0;
+  const scrollMilestones = [25, 50, 75, 100];
+  const trackedMilestones = new Set();
+  
+  window.addEventListener('scroll', () => {
+    const scrollPercent = Math.round(
+      (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+    );
+    
+    if (scrollPercent > maxScroll) {
+      maxScroll = scrollPercent;
+      
+      scrollMilestones.forEach(milestone => {
+        if (scrollPercent >= milestone && !trackedMilestones.has(milestone)) {
+          trackedMilestones.add(milestone);
+          if (window.plausible) {
+            window.plausible('Scroll Depth', { props: { depth: `${milestone}%` } });
+          }
+        }
+      });
+    }
+  });
+  
+  // Track time on page
+  let startTime = Date.now();
+  const timeThresholds = [30, 60, 120, 300]; // seconds
+  const trackedTimes = new Set();
+  
+  setInterval(() => {
+    const timeOnPage = Math.floor((Date.now() - startTime) / 1000);
+    
+    timeThresholds.forEach(threshold => {
+      if (timeOnPage >= threshold && !trackedTimes.has(threshold)) {
+        trackedTimes.add(threshold);
+        if (window.plausible) {
+          window.plausible('Time on Page', { props: { seconds: `${threshold}s` } });
+        }
+      }
+    });
+  }, 5000);
+  
+  // Track CTA clicks
+  document.addEventListener('click', (e) => {
+    const target = e.target;
+    if (target.matches('button[type="submit"]') || target.closest('button[type="submit"]')) {
+      const form = target.closest('form');
+      if (form && window.plausible) {
+        const formId = form.id || 'unknown';
+        window.plausible('Form Submit Attempt', { props: { form: formId } });
+      }
+    }
+  });
+</script>
